@@ -1,5 +1,6 @@
 import * as React from "react"
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Logo from "../Logo/Logo"
 import { useState } from "react";
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
