@@ -5,13 +5,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <p>Navbar</p>
+      <Logo/>
     </nav>
   )
 }
-export function Logo() {
-  return(
-  <div> </div>
-  
-  )
-
-  }
