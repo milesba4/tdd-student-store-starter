@@ -8,3 +8,10 @@ export default function Navbar() {
     </nav>
   )
 }
+export function Logo() {
+  return(
+  <div> </div>
+  
+  )
+
+  }
