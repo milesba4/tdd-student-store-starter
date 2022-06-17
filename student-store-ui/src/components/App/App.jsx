@@ -11,7 +11,7 @@ import axios from "axios"
 import ProductGrid from "../ProductGrid/ProductGrid";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
-
+import Search from "../Search/Search";
 
 
 //fetching data
@@ -48,6 +48,7 @@ export default function App() {
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar />
+          <Search/>
           <Routes path="*" element = {<NotFound/>}>
           <Route path="/" element={<Home products={products}/>} /> 
           <Route path="/products/:productId" element={<ProductDetail/>}/>
