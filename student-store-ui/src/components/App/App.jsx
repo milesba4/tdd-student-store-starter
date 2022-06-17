@@ -45,17 +45,17 @@ export default function App() {
   return (
     <div className="app">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home products={products}/>} /> 
-          <Route path="/products/:productId" element={<ProductDetail/>}/>
-          <Route path="*" Navbar = {<Navbar/>} Sidebar={<Sidebar/>}/>
-        </Routes>
         <main>
           {/* YOUR CODE HERE! */}
-           <Navbar />
+          <Navbar />
+          <Routes path="*" element = {<NotFound/>}>
+          <Route path="/" element={<Home products={products}/>} /> 
+          <Route path="/products/:productId" element={<ProductDetail/>}/>
+        </Routes>
+  
+          {/* <Navbar /> */}
           {/* <Sidebar /> */}
           {/* {<Home /> } */}
-          {/* <NotFound/>  */}
         </main>
         
       </BrowserRouter>
