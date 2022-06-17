@@ -13,8 +13,31 @@ import ProductDetail from "../ProductDetail/ProductDetail";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
 
-export default function App() {
 
+//fetching data
+
+
+
+export default function App() {
+  
+  const API_URL= "https://codepath-store-api.herokuapp.com/store"
+  const [products, setProducts] = React.useState([])
+
+  React.useEffect(()=>{
+    fetchData();
+  },[])
+
+  async function fetchData(){
+    try {
+      const ApiData = await axios.get(API_URL);
+      console.log(ApiData.data.products);
+    } catch (error) {
+      console.log(error);
+      setError(error);
+    }
+
+  }
+  
   return (
     <div className="app">
       <BrowserRouter>
@@ -25,10 +48,10 @@ export default function App() {
         </Routes>
         <main>
           {/* YOUR CODE HERE! */}
-          <Navbar />
+           <Navbar />
           <Sidebar />
-          <Home />
-          <NotFound/>
+          {/* <Home /> */}
+          <NotFound/> 
         </main>
         
       </BrowserRouter>
