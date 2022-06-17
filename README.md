@@ -38,14 +38,14 @@ The following specifications were met on the Express backend and the React front
 **App.jsx**
 
   - [ ] The core App component that contains the routes for the app and does the initial data fetching
-  - [ ] Renders a `BrowserRouter` component that contains a `Routes` component with the following routes:
-    - [ ] `/` - Should render the `Home.jsx` component
-    - [ ] `/products/:productId` - should render the `ProductDetail` component
-    - [ ] `*` - anything else should render the `NotFound` component
-  - [ ] Renders the `Navbar` component on every route
-  - [ ] Renders the `Sidebar` component on every route
+  - [x] Renders a `BrowserRouter` component that contains a `Routes` component with the following routes:
+    - [x] `/` - Should render the `Home.jsx` component
+    - [x] `/products/:productId` - should render the `ProductDetail` component
+    - [x] `*` - anything else should render the `NotFound` component
+  - [x] Renders the `Navbar` component on every route
+  - [x] Renders the `Sidebar` component on every route
   - [ ] Should create **at least** the following state variables:
-    - [ ] `products` - an array of product objects that is initially empty.
+    - [x] `products` - an array of product objects that is initially empty.
     - [ ] `isFetching` - a boolean value representing whether or not the App is currently fetching the `products` from the API.
     - [ ] `error` - a variable used to display a message when something goes wrong with the API requests.
     - [ ] `isOpen` - a boolean value representing whether or not the `Sidebar.jsx` is in the open or closed state.
@@ -97,33 +97,33 @@ The following specifications were met on the Express backend and the React front
 
 **Navbar.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `nav` element with a `className` of `navbar`
-  - [ ] Should render the `Logo` component that links to the `/` route when clicked
+  - [x] Should render JSX that is wrapped by a `nav` element with a `className` of `navbar`
+  - [x] Should render the `Logo` component that links to the `/` route when clicked
 
 **Logo.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `logo`
+  - [x] Should render JSX that is wrapped by a `div` element with a `className` of `logo`
   - [ ] Should use the `Link` component from `react-router-dom` to link to the home route (`/`) when clicked
 
 **Home.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `home`
-  - [ ] Should accept **at least** the following props:
+  - [x] Should render JSX that is wrapped by a `div` element with a `className` of `home`
+  - [x] Should accept **at least** the following props:
     - `products` - an array of product objects
     - `handleAddItemToCart` - handler function defined in the `App.jsx` component
     - `handleRemoveItemToCart` - handler function defined in the `App.jsx` component
-  - [ ] Should render the `Hero` component
-  - [ ] Should render the `ProductGrid` component
+  - [x] Should render the `Hero` component
+  - [x] Should render the `ProductGrid` component
 
 **Hero.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `hero`
-  - [ ] Should display an intro message inside an element with the `className` of `intro`. That message should contain the text `"Welcome!"` somewhere within it.
+  - [x] Should render JSX that is wrapped by a `div` element with a `className` of `hero`
+  - [x] Should display an intro message inside an element with the `className` of `intro`. That message should contain the text `"Welcome!"` somewhere within it.
   - [ ] Should render a hero image inside an `img` tag with the `className` of `hero-img`.
 
 **ProductGrid.jsx**
 
-  - [ ] Should render JSX that is wrapped by a `div` element with a `className` of `product-grid`
+  - [x] Should render JSX that is wrapped by a `div` element with a `className` of `product-grid`
   - [ ] Should accept **at least** the following props:
     - `products` - an array of product objects
     - `handleAddItemToCart` - handler function defined in the `App.jsx` component
