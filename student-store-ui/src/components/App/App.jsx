@@ -24,31 +24,29 @@ export default function App() {
   const [products, setProducts] = React.useState([])
 
   React.useEffect(()=>{
-    fetchData();
-  },[])
-
   async function fetchData(){
     try {
       const ApiData = await axios.get(API_URL);
       console.log(ApiData.data.products);
-      // if (ApiData.data.products.length > 0){
-      //   setProducts(ApiData.data.products);
-      // } else{
-      //   setError("No products");
-      // }
+      console.log("apidata=", ApiData)
+      console.log("products1=", products)
+      setProducts(ApiData.data.products)
+      console.log("products2=",products)
     } catch (error) {
       console.log(error);
       setError(error);
     }
-    setProducts([...ApiData])
-
   }
+  fetchData();
+},[])
+  
+
   
   return (
     <div className="app">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home/>} /> 
+          <Route path="/" element={<Home products={products}/>} /> 
           <Route path="/products/:productId" element={<ProductDetail/>}/>
           <Route path="*" Navbar = {<Navbar/>} Sidebar={<Sidebar/>}/>
         </Routes>
@@ -56,7 +54,7 @@ export default function App() {
           {/* YOUR CODE HERE! */}
            <Navbar />
           {/* <Sidebar /> */}
-          {/* <Home /> */}
+          {/* {<Home /> } */}
           {/* <NotFound/>  */}
         </main>
         
