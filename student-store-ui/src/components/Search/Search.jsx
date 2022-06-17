@@ -1,11 +1,11 @@
+import "./Search.css"
 export default function Search() {
     return (
-        <form>
-        <label>
-            Name:
-            <input type="text" name="name" />
-        </label>
-        <input type="submit" value="Submit" />
+        <form className="Search-form">
+            <label>
+                <input type="text" placeholder="Search" name="Search" />
+            </label>
+            <input type="submit" value="Submit" />
         </form>
     )
   }
