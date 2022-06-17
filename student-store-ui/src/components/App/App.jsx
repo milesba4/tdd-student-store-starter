@@ -10,6 +10,7 @@ import "./App.css"
 import axios from "axios"
 import ProductGrid from "../ProductGrid/ProductGrid";
 import ProductDetail from "../ProductDetail/ProductDetail";
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
 
 export default function App() {
@@ -20,7 +21,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home/>} /> 
           <Route path="/products/:productId" element={<ProductDetail/>}/>
-          <Route path="*"> <Navbar/> <Sidebar/> </Route>
+          <Route path="*" Navbar = {<Navbar/>} Sidebar={<Sidebar/>}/>
         </Routes>
         <main>
           {/* YOUR CODE HERE! */}
