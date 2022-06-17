@@ -5,7 +5,10 @@ import { useState } from "react";
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
+import NotFound from "../NotFound/NotFound";
 import "./App.css"
+import axios from "axios"
+import ProductGrid from "../ProductGrid/ProductGrid";
 
 
 
@@ -15,20 +18,16 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <Routes>
-          <Route path="/"> <Home/> <Navbar/> <Sidebar/> <Logo/></Route>
-          <Route path="/products/:productId"> <ProductDetail/> <Navbar/> <Sidebar/> </Route>
-          <Route path="*"> <NotFound/><Navbar/> <Sidebar/> </Route>
-
-
-
-
+          <Route path="/" element={<Home/>} /> 
+          <Route path="/products/:productId" element={<ProductDetail/>}/>
+          <Route path="*"> <Navbar/> <Sidebar/> </Route>
         </Routes>
         <main>
           {/* YOUR CODE HERE! */}
           <Navbar />
           <Sidebar />
           <Home />
-       
+          <NotFound/>
         </main>
         
       </BrowserRouter>
