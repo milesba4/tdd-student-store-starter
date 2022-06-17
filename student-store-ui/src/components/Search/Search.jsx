@@ -1,9 +1,9 @@
 import "./Search.css"
-export default function Search() {
+export default function Search({UserInput}) {
     return (
         <form className="Search-form">
             <label>
-                <input type="text" placeholder="Search" name="Search" />
+                <input type="text" placeholder="Search" name="Search" value={UserInput} />
             </label>
             <input type="submit" value="Submit" />
         </form>
