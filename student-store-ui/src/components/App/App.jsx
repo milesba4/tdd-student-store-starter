@@ -22,7 +22,7 @@ export default function App() {
   
   const API_URL= "https://codepath-store-api.herokuapp.com/store"
   const [products, setProducts] = React.useState([])
-
+  const[userInput,setUserInput]= React.useState("")
   React.useEffect(()=>{
   async function fetchData(){
     try {
