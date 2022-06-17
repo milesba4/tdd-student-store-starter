@@ -9,7 +9,7 @@ import NotFound from "../NotFound/NotFound";
 import "./App.css"
 import axios from "axios"
 import ProductGrid from "../ProductGrid/ProductGrid";
-
+import ProductDetail from "../ProductDetail/ProductDetail";
 
 
 export default function App() {
