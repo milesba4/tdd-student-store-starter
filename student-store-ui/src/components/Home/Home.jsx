@@ -6,8 +6,9 @@ export default function Home({products,handleAddItemToCart,handleRemoveItemToCar
   return (
     <div className="home">
        <Hero/> 
-      <ProductGrid/> 
-      <p>Home</p>
+      <h2>Best Selling Products</h2>
+      <ProductGrid products={products}/> 
+     
     </div>
   )
 }
