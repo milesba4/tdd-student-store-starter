@@ -6,6 +6,7 @@ export default function ProductCard({products}) {
         {products.map((element) =>{
         return(
         <div className="product-card"> 
+        <img src = {element.image} width="200" height="200"/>
         </div>
         )})}
       </div>
