@@ -1,6 +1,8 @@
 export default function Logo(){
 return(
-<div className="logo"></div>
+<div className="logo">
+    (Logo)
+</div>
 
 )
 
