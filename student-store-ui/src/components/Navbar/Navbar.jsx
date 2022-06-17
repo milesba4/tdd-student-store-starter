@@ -5,8 +5,10 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <ul class="nav-links">
-      <Logo/>
+      <ul className="nav-links">
+        <li>
+          <Logo/>
+        </li>
       <li>
         <a href=""> Home</a>
       </li>
