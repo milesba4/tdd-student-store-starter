@@ -31,10 +31,16 @@ export default function App() {
     try {
       const ApiData = await axios.get(API_URL);
       console.log(ApiData.data.products);
+      // if (ApiData.data.products.length > 0){
+      //   setProducts(ApiData.data.products);
+      // } else{
+      //   setError("No products");
+      // }
     } catch (error) {
       console.log(error);
       setError(error);
     }
+    setProducts([...ApiData])
 
   }
   
@@ -49,9 +55,9 @@ export default function App() {
         <main>
           {/* YOUR CODE HERE! */}
            <Navbar />
-          <Sidebar />
+          {/* <Sidebar /> */}
           {/* <Home /> */}
-          <NotFound/> 
+          {/* <NotFound/>  */}
         </main>
         
       </BrowserRouter>
