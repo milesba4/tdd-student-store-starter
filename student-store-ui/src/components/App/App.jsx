@@ -23,6 +23,8 @@ export default function App() {
   const API_URL= "https://codepath-store-api.herokuapp.com/store"
   const [products, setProducts] = React.useState([])
   const[userInput,setUserInput]= React.useState("")
+  const[selectCategory,setCategories] =React.useState("All Categories")
+  
   React.useEffect(()=>{
   async function fetchData(){
     try {
