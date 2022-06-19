@@ -52,6 +52,7 @@ export default function App() {
           <Navbar />
           <Routes path="*" element = {<NotFound/>}>
           <Route path="/" element={<Home userInput={userInput} setUserInput={setUserInput} products={products}/>} /> 
+          <Route path="/" element={<Home selectCategory={selectCategory} userInput={userInput} setUserInput={setUserInput} products={products} setCategories={setCategories}  />} /> 
           <Route path="/products/:productId" element={<ProductDetail/>}/>
         </Routes>
   
