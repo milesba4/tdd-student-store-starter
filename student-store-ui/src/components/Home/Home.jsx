@@ -15,6 +15,11 @@ export default function Home({products,handleAddItemToCart,handleRemoveItemToCar
       <Search UserInput={UserInput} setUserInput={setUserInput}/>
       <ProductGrid products={products}/> 
       <ul className="sub-nav">
+      {["All Categories","Clothing","Food","Accessories","Tech"].map((category)=>
+        (
+          <li><button type="button" onClick={()=>setCategories(category)}>{category}</button></li>
+        )
+        )}
       </ul>
      
     </div>
