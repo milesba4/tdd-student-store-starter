@@ -14,6 +14,8 @@ export default function Home({products,handleAddItemToCart,handleRemoveItemToCar
       <h2>Best Selling Products</h2>
       <Search UserInput={UserInput} setUserInput={setUserInput}/>
       <ProductGrid products={products}/> 
+      <ul className="sub-nav">
+      </ul>
      
     </div>
   )
