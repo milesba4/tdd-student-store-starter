@@ -10,6 +10,7 @@ export default function Home({products,handleAddItemToCart,handleRemoveItemToCar
   return (
     <div className="home">
       <Hero/> 
+      <Search UserInput={userInput} setUserInput={setUserInput} />
       <h2>Best Selling Products</h2>
       <Search UserInput={UserInput} setUserInput={setUserInput}/>
       <ProductGrid products={products}/> 
