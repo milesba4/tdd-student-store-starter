@@ -1,6 +1,9 @@
-.Search-form input[type="text"] {
-        width:300px;
-        background-color: #ffffff;
-        height: 30px;
-        border-radius: 10px;
+.Search-form input[type="text"]{
+    width:300px;
+    background-color: #ffffff;
+    height: 40px;
+    border-radius: 5px;
+    width:580px;
+    text-align: center;
 }
+
