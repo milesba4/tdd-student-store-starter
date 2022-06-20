@@ -14,6 +14,7 @@ export default function Home({products,handleAddItemToCart,handleRemoveItemToCar
       <h2>Best Selling Products</h2>
       <Search UserInput={UserInput} setUserInput={setUserInput}/>
       <ProductGrid products={products}/> 
+      
       <ul className="sub-nav">
       {["All Categories","Clothing","Food","Accessories","Tech"].map((category)=>
         (
@@ -21,6 +22,7 @@ export default function Home({products,handleAddItemToCart,handleRemoveItemToCar
         )
         )}
       </ul>
+      <ProductGrid userInput={userInput} selectCategory={selectCategory} products={products} /> 
      
     </div>
   )
