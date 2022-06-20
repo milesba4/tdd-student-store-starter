@@ -2,7 +2,6 @@ import * as React from "react"
 import "./ProductGrid.css"
 import ProductCard from "../ProductCard/ProductCard"
 
-export default function ProductGrid({products}) {
 
 export default function ProductGrid({products, selectCategory,userInput}) {
 
@@ -25,7 +24,8 @@ export default function ProductGrid({products, selectCategory,userInput}) {
 
     return (
     <div className="product-grid">
-     {products.map((element) =>{
+     {getSearchProducts().map((element) =>{  // iterates through every element in the returned array of getCategoryProducts and renders a product card for it
+
         return(
             <div className="product-card">
             <ProductCard key={element.id} element={element}/>
