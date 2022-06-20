@@ -2,7 +2,7 @@ import * as React from "react"
 import ProductCard from "../ProductCard/ProductCard"
 export default function ProductView({}) {
     return (
-        <div>
+        <div className = "product-view">
         <ProductCard/>
         <ProductCard/>
         <ProductCard/>
