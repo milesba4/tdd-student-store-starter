@@ -12,8 +12,6 @@ export default function Home({products,handleAddItemToCart,handleRemoveItemToCar
       <Hero/> 
       <Search UserInput={userInput} setUserInput={setUserInput} />
       <h2>Best Selling Products</h2>
-      <Search UserInput={UserInput} setUserInput={setUserInput}/>
-      <ProductGrid products={products}/> 
       
       <ul className="sub-nav">
       {["All Categories","Clothing","Food","Accessories","Tech"].map((category)=>
