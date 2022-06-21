@@ -286,8 +286,9 @@ I felt a little unprepared to using axios to make API calls, although it wasn't 
 
 If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
 
+I would've spent more time on the design of the website and made it look cleaner/prettier.
 
 
 Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-
+When demoing my project, I was able to showcase all of my features and reflect on struggles during the process of implementing the core features. 
