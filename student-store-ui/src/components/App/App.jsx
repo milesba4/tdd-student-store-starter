@@ -30,7 +30,6 @@ export default function App() {
   const[shoppingCart,setShoppingCart]=React.useState([{itemId:"",quantity:""}])
   const[checkoutForm,setCheckoutForm]=React.useState("")
 
-
 React.useEffect(async() => {
   try{
     const response = await axios.get("https://codepath-store-api.herokuapp.com/store")
@@ -45,6 +44,9 @@ React.useEffect(async() => {
   }
 }, []);
 
+function handleOnToggle(){
+
+}
   
   return (
     <div className="app">
