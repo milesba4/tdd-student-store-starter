@@ -45,7 +45,11 @@ React.useEffect(async() => {
 }, []);
 
 function handleOnToggle(){
-
+if (isOpen == true){
+  setIsOpen(false)
+}else{
+  setIsOpen(true)
+}
 }
 
 function handleAddItemToCart(){
@@ -58,7 +62,6 @@ function handleAddItemToCart(){
         <main>
           <Navbar />
           <Routes path="*" element = {<NotFound/>}>
-          <Route path="/" element={<Home selectCategory={selectCategory} userInput={userInput} setUserInput={setUserInput} products={products} setCategories={setCategories}  />} /> 
           <Route path="/" element={<Home handleAddItemToCart={handleAddItemToCart} handleOnToggle={handleOnToggle} selectCategory={selectCategory} userInput={userInput} setUserInput={setUserInput} products={products} setCategories={setCategories}  />} /> 
           <Route path="/products/:productId" element={<ProductDetail handleAddItemToCart={handleAddItemToCart} handleOnToggle={handleOnToggle} />}/>
         </Routes>
