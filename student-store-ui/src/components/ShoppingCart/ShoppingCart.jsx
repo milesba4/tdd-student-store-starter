@@ -1,7 +1,7 @@
 import * as React from "react"
-export default function ShoppingCart() {
+export default function ShoppingCart({isOpen,products,shoppingCart}) {
 return(
-<div> 
+<div className = "shopping-cart"> 
 </div>
 )
  }
