@@ -62,6 +62,7 @@ if(productId){
   setShoppingCart(current =>  ({
     ...current, [itemId]:productId,[quantity]:1
   }))
+console.log("shopping cart=", shoppingCart)
 }
 }
 
