@@ -47,6 +47,10 @@ React.useEffect(async() => {
 function handleOnToggle(){
 
 }
+
+function handleAddItemToCart(){
+
+}
   
   return (
     <div className="app">
