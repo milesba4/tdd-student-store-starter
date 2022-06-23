@@ -20,44 +20,41 @@ import Search from "../Search/Search";
 
 export default function App() {
   
-  const API_URL= "https://codepath-store-api.herokuapp.com/store"
+
   const [products, setProducts] = React.useState([])
   const[userInput,setUserInput]= React.useState("")
   const[selectCategory,setCategories] =React.useState("All Categories")
-  
-  React.useEffect(()=>{
-  async function fetchData(){
-    try {
-      const ApiData = await axios.get(API_URL);
-      console.log(ApiData.data.products);
-      console.log("apidata=", ApiData)
-      console.log("products1=", products)
-      setProducts(ApiData.data.products)
-      console.log("products2=",products)
-    } catch (error) {
-      console.log(error);
-      setError(error);
-    }
+  const[isFetching,setIsFetching] = React.useState(false)
+  const[error,setError]=React.useState("")
+  const[isOpen,setIsOpen] = React.useState(false)
+  const[shoppingCart,setShoppingCart]=React.useState([{itemId:"",quantity:""}])
+  const[checkoutForm,setCheckoutForm]=React.useState("")
+
+
+React.useEffect(async() => {
+  try{
+    const response = await axios.get("https://codepath-store-api.herokuapp.com/store")
+    if(response.data.products){
+      setProducts(response.data.products)}
+      console.log("products=",products)
   }
-  fetchData();
-},[])
-  
+  catch (error){
+    setError(error)
+    
+    console.log("error=", error)
+  }
+}, []);
 
   
   return (
     <div className="app">
       <BrowserRouter>
         <main>
-          {/* YOUR CODE HERE! */}
           <Navbar />
           <Routes path="*" element = {<NotFound/>}>
           <Route path="/" element={<Home selectCategory={selectCategory} userInput={userInput} setUserInput={setUserInput} products={products} setCategories={setCategories}  />} /> 
           <Route path="/products/:productId" element={<ProductDetail/>}/>
         </Routes>
-  
-          {/* <Navbar /> */}
-          {/* <Sidebar /> */}
-          {/* {<Home /> } */}
         </main>
         
       </BrowserRouter>
