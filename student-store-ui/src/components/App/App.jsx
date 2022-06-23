@@ -27,7 +27,7 @@ export default function App() {
   const[isFetching,setIsFetching] = React.useState(false)
   const[error,setError]=React.useState("")
   const[isOpen,setIsOpen] = React.useState(false)
-  const[shoppingCart,setShoppingCart]=React.useState([{itemId:"",quantity:""}])
+  const[shoppingCart,setShoppingCart]=React.useState([{itemId:"",quantity:0}])
   const[checkoutForm,setCheckoutForm]=React.useState("")
 
 React.useEffect(async() => {
@@ -52,7 +52,18 @@ if (isOpen == true){
 }
 }
 
-function handleAddItemToCart(){
+function handleAddItemToCart(productId){
+if(productId){
+  setShoppingCart(current =>  ({
+    ...current, [itemId]:productId,[quantity]:shoppingCart[quantity] +=1
+  }))
+}else{
+  setShoppingCart(current =>  ({
+    ...current, [itemId]:productId,[quantity]:1
+  }))
+}
+}
+
 
 }
   
