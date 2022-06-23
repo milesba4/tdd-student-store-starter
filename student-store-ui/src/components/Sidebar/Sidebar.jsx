@@ -6,6 +6,8 @@ export default function Sidebar({isOpen, ShoppingCart,products, checkoutForm,han
   return (
     <section className={isOpen ? "sidebar" : "sidebar closed"}>
         <button className="toggle-button" onClick={()=>handleOnToggle()}> 
+        <i className="material-icons md-48">arrow_forward</i>
+        </button> 
 
   )
 }
