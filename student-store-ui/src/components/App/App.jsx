@@ -50,6 +50,7 @@ if (isOpen == true){
 }else{
   setIsOpen(true)
 }
+console.log("open status=", isOpen)
 }
 
 function handleAddItemToCart(productId){
@@ -64,6 +65,7 @@ if(productId){
 }
 }
 
+function handleRemoveItemFromCart(){
 
 }
   
@@ -72,6 +74,7 @@ if(productId){
       <BrowserRouter>
         <main>
           <Navbar />
+          <Sidebar isOpen={isOpen} handleOnToggle={handleOnToggle}/>
           <Routes path="*" element = {<NotFound/>}>
           <Route path="/" element={<Home handleAddItemToCart={handleAddItemToCart} handleOnToggle={handleOnToggle} selectCategory={selectCategory} userInput={userInput} setUserInput={setUserInput} products={products} setCategories={setCategories}  />} /> 
           <Route path="/products/:productId" element={<ProductDetail handleAddItemToCart={handleAddItemToCart} handleOnToggle={handleOnToggle} />}/>
