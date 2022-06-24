@@ -45,10 +45,12 @@ React.useEffect(async() => {
 }, []);
 
 function handleOnToggle(){
-
-  setIsOpen(!isOpen)
-
-console.log("open status1=", isOpen)
+if (isOpen == true){
+  setIsOpen(false)
+}else{
+  setIsOpen(true)
+}
+console.log("open status=", isOpen)
 }
 
 function handleAddItemToCart(productId){
@@ -64,33 +66,46 @@ console.log("shopping cart=", shoppingCart)
 }
 }
 
-// function handleRemoveItemToCart(productId){
-//   if(productId){
-//     setShoppingCart(current =>  ({
-//       ...current, [itemId]:productId,[quantity]:shoppingCart[quantity] -=1
-//     }))
-//   }else{
-  
-//     }
-  
-//   if(shoppingCart.quantity==0){
-
-//   }
-// }
-
-
-function handleOnCheckoutFormChange(){
-
+function handleRemoveItemFromCart(){
 
 }
 
 
+function handleOnCheckoutFormChange(name, value){
+  setCheckoutForm({
+    ...checkoutForm,
+    [name]: value,
+  })
+
+}
+
+
+
+function handleOnSubmitCheckoutForm() {
+  axios.post("http://localhost:3001/store", { user: checkoutForm, shoppingCart: shoppingCart })
+    .then(() => {
+      setShoppingCart([])
+      setCheckoutForm({ email: "", name: "" })
+    })
+    .catch((error) => { setError(error); console.log(error) })
+
+}
+
+
+React.useEffect(() => {
+  axios.get("http://localhost:3001/store")
+    .then((response) => { setProducts(response.data.products); console.log(response.data.products) })
+    .catch((error) => { setError(error); console.log(error) })
+
+}, [])
+
+  
   return (
     <div className="app">
       <BrowserRouter>
         <main>
           <Navbar />
-          <Sidebar error = {error} handleAddItemToCart={handleAddItemToCart} products = {products} shoppingCart={shoppingCart} isOpen={isOpen} handleOnToggle={handleOnToggle}/>
+          <Sidebar isOpen={isOpen} handleOnToggle={handleOnToggle}/>
           <Routes path="*" element = {<NotFound/>}>
           <Route path="/" element={<Home handleAddItemToCart={handleAddItemToCart} handleOnToggle={handleOnToggle} selectCategory={selectCategory} userInput={userInput} setUserInput={setUserInput} products={products} setCategories={setCategories}  />} /> 
           <Route path="/products/:productId" element={<ProductDetail handleAddItemToCart={handleAddItemToCart} handleOnToggle={handleOnToggle} />}/>
