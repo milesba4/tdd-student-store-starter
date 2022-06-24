@@ -1,20 +1,20 @@
 import * as React from "react"
-export default function ShoppingCart({shoppingCart,products, handleAddItemCart}) {
+export default function ShoppingCart({shoppingCart,products}) {
+    console.log("Sh=",shoppingCart)
 return(
  <div className = "shopping-cart"> 
- 
+    {/*If no items in shopping cart*/}
+    {shoppingCart.item="" && <h3 className="notification">No items added to cart yet. Start shopping now!</h3>}
+      {/*If there are items in shopping cart*/}
     {shoppingCart.map((item) =>{   // iterating through shoppingCart array and displaying the itemId of each object 
+        let quantity = item.quantity
         console.log("item s",item)
-        let itemProduct = products.find(e => e.id === item.itemId) // store product object if matches id
+        let itemProduct= products.find(e => e.id === item.itemId) 
         console.log("name=", itemProduct)
         return(
             <div className= "cart-product-info">
-                <div className="cart-product-name">
-                {itemProduct}   
-                </div>
-                <div className="cart-product-quantity">
-                {item.quantity}   
-                </div>
+                <span className="cart-product-name">{itemProduct.name} </span> 
+                <span className="cart-product-quantity">{quantity}</span> 
             </div>
         )})}
 </div> 
