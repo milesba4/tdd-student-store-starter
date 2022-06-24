@@ -64,12 +64,6 @@ console.log("shopping cart=", shoppingCart)
 }
 }
 
-function handleRemoveItemToCart(productId){
-  if(productId){
-    setShoppingCart(current =>  ({
-      ...current, [itemId]:productId,[quantity]:shoppingCart[quantity] -=1
-    }))
-  }else{
 // function handleRemoveItemToCart(productId){
 //   if(productId){
 //     setShoppingCart(current =>  ({
@@ -83,6 +77,9 @@ function handleRemoveItemToCart(productId){
 
 //   }
 // }
+
+
+function handleOnCheckoutFormChange(){
 
 
 }
