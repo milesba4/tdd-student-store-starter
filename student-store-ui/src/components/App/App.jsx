@@ -85,7 +85,6 @@ function handleOnCheckoutFormChange(){
 }
 
 
-  
   return (
     <div className="app">
       <BrowserRouter>
