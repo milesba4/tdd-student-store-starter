@@ -4,7 +4,7 @@ export default function ProductView({products,productId,quantity,handleAddItemTo
     return (
         <div className = "product-view">
         <h1 className="product-id">Product #{productId}</h1>
-        <ProductCard products={products}/>
+        <ProductCard products={products} productId={productId}/>
         </div>
 )
 
