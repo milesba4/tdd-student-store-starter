@@ -20,7 +20,7 @@ export default function Home({products,handleAddItemToCart,handleRemoveItemToCar
         )
         )}
       </ul>
-      <ProductGrid userInput={userInput} selectCategory={selectCategory} products={products} /> 
+      <ProductGrid handleAddItemToCart={handleAddItemToCart} userInput={userInput} selectCategory={selectCategory} products={products} /> 
      
     </div>
   )
