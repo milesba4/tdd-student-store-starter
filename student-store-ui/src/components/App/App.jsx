@@ -64,9 +64,19 @@ console.log("shopping cart=", shoppingCart)
 }
 }
 
-function handleRemoveItemFromCart(){
-
+function handleRemoveItemFromCart(productId){
+  if(productId){
+    setShoppingCart(current =>  ({
+      ...current, [itemId]:productId,[quantity]:shoppingCart[quantity] -=1
+    }))
+  }else{
+  
+    }
+  
+  if(shoppingCart.)
 }
+
+
   
   return (
     <div className="app">
