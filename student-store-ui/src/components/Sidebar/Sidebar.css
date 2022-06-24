@@ -26,3 +26,6 @@
 
 
 }
+.sidebar .toggle-button.open {
+    transform: rotateY(180deg);
+}
