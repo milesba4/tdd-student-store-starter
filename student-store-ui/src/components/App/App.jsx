@@ -26,7 +26,7 @@ export default function App() {
   const[selectCategory,setCategories] =React.useState("All Categories")
   const[isFetching,setIsFetching] = React.useState(false)
   const[error,setError]=React.useState("")
-  const[isOpen,setIsOpen] = React.useState(true)
+  const[isOpen,setIsOpen] = React.useState(false)
   const[shoppingCart,setShoppingCart]=React.useState([{itemId:"",quantity:0}])
   const[checkoutForm,setCheckoutForm]=React.useState({name: "", email: ""})
 
