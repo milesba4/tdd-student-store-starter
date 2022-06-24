@@ -26,8 +26,8 @@ export default function App() {
   const[selectCategory,setCategories] =React.useState("All Categories")
   const[isFetching,setIsFetching] = React.useState(false)
   const[error,setError]=React.useState("")
-  const[isOpen,setIsOpen] = React.useState(false)
-  const[shoppingCart,setShoppingCart]=React.useState([{itemId:"",quantity:0}])
+  const[isOpen,setIsOpen] = React.useState(true)
+  const[shoppingCart,setShoppingCart]=React.useState([])
   const[checkoutForm,setCheckoutForm]=React.useState({name: "", email: ""})
 
 React.useEffect(async() => {
@@ -45,30 +45,41 @@ React.useEffect(async() => {
 }, []);
 
 function handleOnToggle(){
-if (isOpen == true){
-  setIsOpen(false)
-}else{
-  setIsOpen(true)
+
+  setIsOpen(!isOpen)
+
+console.log("open status1=", isOpen)
 }
-console.log("open status=", isOpen)
-}
+
+
 
 function handleAddItemToCart(productId){
-if(productId){
-  setShoppingCart(current =>  ({
-    ...current, [itemId]:productId,[quantity]:shoppingCart[quantity] +=1
-  }))
-}else{
-  setShoppingCart(current =>  ({
-    ...current, [itemId]:productId,[quantity]:1
-  }))
+  console.log("productid=", productId)
+  let itemFound = shoppingCart.find((x) => x.itemId === productId);
+  if(itemFound){
+  itemFound.quantity++;
+  setShoppingCart([...shoppingCart]);
+    } else {
+      setShoppingCart([...shoppingCart, { itemId: productId, quantity: 1 }]);
+      console.log("middlesc=", shoppingCart)
+    }
 console.log("shopping cart=", shoppingCart)
 }
-}
 
-function handleRemoveItemFromCart(){
 
-}
+// function handleRemoveItemToCart(productId){
+//   if(productId){
+//     setShoppingCart(current =>  ({
+//       ...current, [itemId]:productId,[quantity]:shoppingCart[quantity] -=1
+//     }))
+//   }else{
+  
+//     }
+  
+//   if(shoppingCart.quantity==0){
+
+//   }
+// }
 
 
 function handleOnCheckoutFormChange(name, value){
@@ -99,16 +110,15 @@ React.useEffect(() => {
 
 }, [])
 
-  
   return (
     <div className="app">
       <BrowserRouter>
         <main>
           <Navbar />
-          <Sidebar isOpen={isOpen} handleOnToggle={handleOnToggle}/>
+          <Sidebar error = {error} products = {products} shoppingCart={shoppingCart} isOpen={isOpen} handleOnToggle={handleOnToggle}/>
           <Routes path="*" element = {<NotFound/>}>
           <Route path="/" element={<Home handleAddItemToCart={handleAddItemToCart} handleOnToggle={handleOnToggle} selectCategory={selectCategory} userInput={userInput} setUserInput={setUserInput} products={products} setCategories={setCategories}  />} /> 
-          <Route path="/products/:productId" element={<ProductDetail handleAddItemToCart={handleAddItemToCart} handleOnToggle={handleOnToggle} />}/>
+          <Route path="/products/:productId" element={<ProductDetail error = {error} setError = {setError} shoppingCart={shoppingCart} isFetching ={isFetching} setIsFetching={setIsFetching} handleAddItemToCart={handleAddItemToCart} handleOnToggle={handleOnToggle} />}/>
         </Routes>
         </main>
         
