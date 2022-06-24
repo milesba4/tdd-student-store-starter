@@ -48,7 +48,7 @@ function handleOnToggle(){
 
   setIsOpen(!isOpen)
 
-console.log("open status=", isOpen)
+console.log("open status1=", isOpen)
 }
 
 function handleAddItemToCart(productId){
