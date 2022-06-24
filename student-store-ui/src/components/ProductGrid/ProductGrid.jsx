@@ -6,7 +6,7 @@ import ProductCard from "../ProductCard/ProductCard"
 export default function ProductGrid({products, selectCategory,userInput}) {
 
     console.log("userInput=",userInput)
-
+    console.log("object=",products)
     function getSearchProducts(){
         if(userInput=="" && selectCategory=="All Categories"){  // if search query is nothing return all products
         return products
@@ -25,7 +25,7 @@ export default function ProductGrid({products, selectCategory,userInput}) {
     return (
     <div className="product-grid">
      {getSearchProducts().map((element) =>{  // iterates through every element in the returned array of getCategoryProducts and renders a product card for it
-
+        // console.log("element.id=",element.id)
         return(
             <div className="product-card">
             
