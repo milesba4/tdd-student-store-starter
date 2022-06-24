@@ -23,5 +23,13 @@ React.useEffect(async() => {
         setError(error)
     return <NotFound />
     }}, []);
+
+return(
+    <div className="product-detail">
+        {isFetching && <h1 className="loading">Loading...</h1>}
+        {!error && <ProductView product={product} productId={productId} quantity={shoppingCart.find(x => x.itemId === product.id)?.quantity}
+          handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart} shoppingCart={shoppingCart} />}
+        {error && <NotFound />}
+      </div>
 )
  }
