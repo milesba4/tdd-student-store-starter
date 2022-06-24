@@ -1,5 +1,5 @@
 import * as React from "react"
-export default function ShoppingCart({shoppingCart,products}) {
+export default function ShoppingCart({shoppingCart,products, handleAddItemCart}) {
 return(
  <div className = "shopping-cart"> 
  
