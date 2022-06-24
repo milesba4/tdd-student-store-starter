@@ -9,9 +9,9 @@ export default function Sidebar({isOpen, shoppingCart,products, checkoutForm,han
         <button className="toggle-button" onClick={()=>handleOnToggle()}> 
         <i className="material-icons md-48">arrow_forward</i>
         </button> 
-        {isOpen &&<><ShoppingCart ShoppingCart={ShoppingCart} isOpen={isOpen} products={products}  />
-          <CheckoutForm  ShoppingCart={ShoppingCart} isOpen={isOpen} checkoutForm={checkoutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange}
-            error={error} handleOnSubmitCheckoutFormChange={handleOnSubmitCheckoutForm} /> </>}
+         {<><ShoppingCart products={products} shoppingCart={shoppingCart}/>
+         <CheckoutForm/></>
+         } 
 
   </section>
   )
