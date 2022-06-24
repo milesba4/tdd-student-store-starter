@@ -1,8 +1,11 @@
 import * as React from "react"
 import ProductCard from "../ProductCard/ProductCard"
-export default function ProductDetail({}) {
+import ProductView from "../ProductView/ProductView"
+export default function ProductDetail({products, handleOnToggle}) {
 return(
 <div> 
+    <ProductView products={products}/>
+    Hello
 </div>
 
 )
