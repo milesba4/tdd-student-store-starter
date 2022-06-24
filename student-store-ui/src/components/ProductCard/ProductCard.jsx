@@ -12,10 +12,10 @@ export default function ProductCard({ element, productId }) {
       <p className="price"> ${element.price}</p>
       <div class="buttons">
         <button class="add">
-          <i class="material-icons">add</i>
+          <i class="material-icons md32">add</i>
         </button>
         <button class="remove">
-          <i class="material-icons">remove</i>
+          <i class="material-icons md32">remove</i>
         </button>
       </div>
     </div>
