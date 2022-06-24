@@ -26,7 +26,6 @@ export default function App() {
   const[selectCategory,setCategories] =React.useState("All Categories")
   const[isFetching,setIsFetching] = React.useState(false)
   const[error,setError]=React.useState("")
-  const[isOpen,setIsOpen] = React.useState(false)
   const[isOpen,setIsOpen] = React.useState(true)
   const[shoppingCart,setShoppingCart]=React.useState([{itemId:"",quantity:0}])
   const[checkoutForm,setCheckoutForm]=React.useState("")
@@ -46,11 +45,14 @@ React.useEffect(async() => {
 }, []);
 
 function handleOnToggle(){
-if (isOpen == true){
-  setIsOpen(false)
-}else{
-  setIsOpen(true)
-}
+// if (isOpen == true){
+//   setIsOpen(false)
+// }else{
+//   setIsOpen(true)
+// }
+
+  setIsOpen(!isOpen)
+
 console.log("open status=", isOpen)
 }
 
@@ -76,7 +78,6 @@ function handleRemoveItemFromCart(){
       <BrowserRouter>
         <main>
           <Navbar />
-          <Sidebar isOpen={isOpen} handleOnToggle={handleOnToggle}/>
           <Sidebar error = {error}  products = {products} shoppingCart={shoppingCart} isOpen={isOpen} handleOnToggle={handleOnToggle}/>
           <Routes path="*" element = {<NotFound/>}>
           <Route path="/" element={<Home handleAddItemToCart={handleAddItemToCart} handleOnToggle={handleOnToggle} selectCategory={selectCategory} userInput={userInput} setUserInput={setUserInput} products={products} setCategories={setCategories}  />} /> 
