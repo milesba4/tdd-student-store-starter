@@ -45,11 +45,6 @@ React.useEffect(async() => {
 }, []);
 
 function handleOnToggle(){
-// if (isOpen == true){
-//   setIsOpen(false)
-// }else{
-//   setIsOpen(true)
-// }
 
   setIsOpen(!isOpen)
 
