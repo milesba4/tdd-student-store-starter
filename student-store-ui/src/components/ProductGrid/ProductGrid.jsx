@@ -28,7 +28,8 @@ export default function ProductGrid({products, selectCategory,userInput}) {
 
         return(
             <div className="product-card">
-            <ProductCard key={element.id} element={element}/>
+            
+            <ProductCard products={products} productId={element.id} key={element.id} element={element}/>
             </div>
         )})}
 
