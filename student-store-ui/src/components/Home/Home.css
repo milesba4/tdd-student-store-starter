@@ -20,3 +20,7 @@ button:hover{
 text-decoration:underline;
 
 }
+.display{
+    text-align: center;
+	font-size: 30px;
+}
