@@ -28,7 +28,7 @@ export default function App() {
   const[error,setError]=React.useState("")
   const[isOpen,setIsOpen] = React.useState(true)
   const[shoppingCart,setShoppingCart]=React.useState([{itemId:"",quantity:0}])
-  const[checkoutForm,setCheckoutForm]=React.useState("")
+  const[checkoutForm,setCheckoutForm]=React.useState({name: "", email: ""})
 
 React.useEffect(async() => {
   try{
