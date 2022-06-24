@@ -3,9 +3,9 @@ export default function ShoppingCart({shoppingCart,products}) {
     console.log("Sh=",shoppingCart)
 return(
  <div className = "shopping-cart"> 
-    {/*If no items in shopping cart*/}
+
     {shoppingCart.item="" && <h3 className="notification">No items added to cart yet. Start shopping now!</h3>}
-      {/*If there are items in shopping cart*/}
+  
     {shoppingCart.map((item) =>{   // iterating through shoppingCart array and displaying the itemId of each object 
         let quantity = item.quantity
         console.log("item s",item)
