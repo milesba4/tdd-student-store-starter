@@ -3,7 +3,7 @@ import "./ProductGrid.css"
 import ProductCard from "../ProductCard/ProductCard"
 
 
-export default function ProductGrid({products, selectCategory,userInput}) {
+export default function ProductGrid({products, handleAddItemToCart,selectCategory,userInput}) {
 
     console.log("userInput=",userInput)
     console.log("object=",products)
@@ -24,12 +24,12 @@ export default function ProductGrid({products, selectCategory,userInput}) {
 
     return (
     <div className="product-grid">
-     {getSearchProducts().map((element) =>{  // iterates through every element in the returned array of getCategoryProducts and renders a product card for it
-        // console.log("element.id=",element.id)
+     {getSearchProducts().map((element) =>{  // iterates through every element in the returned array of getSearchProducts and renders a product card for it
+        console.log("element.id=",element.id)
         return(
             <div className="product-card">
             
-            <ProductCard products={products} productId={element.id} key={element.id} element={element}/>
+            <ProductCard handleAddItemToCart = {handleAddItemToCart} products={products}  key={element.id} element={element}/>
             </div>
         )})}
 
