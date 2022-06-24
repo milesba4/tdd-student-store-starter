@@ -10,9 +10,10 @@ export default function Home({products,handleAddItemToCart,handleRemoveItemToCar
   return (
     <div className="home">
       <Hero/> 
+      <div className="display">
       <Search UserInput={userInput} setUserInput={setUserInput} />
       <h2>Best Selling Products</h2>
-      
+      </div>
       <ul className="sub-nav">
       {["All Categories","Clothing","Food","Accessories","Tech"].map((category)=>
         (
