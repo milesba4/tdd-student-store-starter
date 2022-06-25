@@ -21,3 +21,14 @@ export default function ProductCard({handleAddItemToCart,handleRemoveItemToCart,
     </div>
   );
 }
+
+export function QuantityDisplay({}){
+return(
+<div className = "quantity-display"></div>
+
+
+)
+
+
+
+}
