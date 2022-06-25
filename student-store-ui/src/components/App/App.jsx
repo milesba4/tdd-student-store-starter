@@ -14,6 +14,7 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import Search from "../Search/Search";
 
 
+
 //fetching data
 
 
@@ -29,6 +30,7 @@ export default function App() {
   const[isOpen,setIsOpen] = React.useState(true)
   const[shoppingCart,setShoppingCart]=React.useState([])
   const[checkoutForm,setCheckoutForm]=React.useState({name: "", email: ""})
+  
 
 React.useEffect(async() => {
   try{
@@ -54,11 +56,15 @@ console.log("open status1=", isOpen)
 
 
 function handleAddItemToCart(productId){
+  
   console.log("productid=", productId)
   let itemFound = shoppingCart.find((x) => x.itemId === productId);
   if(itemFound){
-  itemFound.quantity++;
-  setShoppingCart([...shoppingCart]);
+    console.log("quant1=",shoppingCart.itemId)
+    let copyShoppingCart = shoppingCart
+    let index = shoppingCart.findIndex(element => element.itemId == productId)
+    copyShoppingCart[index].quantity +=1 //add
+    setShoppingCart(copyShoppingCart);
     } else {
       setShoppingCart([...shoppingCart, { itemId: productId, quantity: 1 }]);
       console.log("middlesc=", shoppingCart)
@@ -117,7 +123,7 @@ React.useEffect(() => {
           <Navbar />
           <Sidebar error = {error} products = {products} shoppingCart={shoppingCart} isOpen={isOpen} handleOnToggle={handleOnToggle}/>
           <Routes path="*" element = {<NotFound/>}>
-          <Route path="/" element={<Home handleAddItemToCart={handleAddItemToCart} handleOnToggle={handleOnToggle} selectCategory={selectCategory} userInput={userInput} setUserInput={setUserInput} products={products} setCategories={setCategories}  />} /> 
+          <Route path="/" element={<Home handleRemoveItemToCart={handleRemoveItemToCart}handleAddItemToCart={handleAddItemToCart} handleOnToggle={handleOnToggle} selectCategory={selectCategory} userInput={userInput} setUserInput={setUserInput} products={products} setCategories={setCategories}  />} /> 
           <Route path="/products/:productId" element={<ProductDetail error = {error} setError = {setError} shoppingCart={shoppingCart} isFetching ={isFetching} setIsFetching={setIsFetching} handleAddItemToCart={handleAddItemToCart} handleOnToggle={handleOnToggle} />}/>
         </Routes>
         </main>

@@ -3,7 +3,7 @@ import "./ProductGrid.css"
 import ProductCard from "../ProductCard/ProductCard"
 
 
-export default function ProductGrid({products, handleAddItemToCart,selectCategory,userInput}) {
+export default function ProductGrid({products, handleRemoveItemToCart,handleAddItemToCart,selectCategory,userInput}) {
 
     console.log("userInput=",userInput)
     console.log("object=",products)
@@ -29,7 +29,7 @@ export default function ProductGrid({products, handleAddItemToCart,selectCategor
         return(
             <div className="product-card">
             
-            <ProductCard handleAddItemToCart = {handleAddItemToCart} products={products}  key={element.id} element={element}/>
+            <ProductCard productId={element.id} handleRemoveItemToCart={handleRemoveItemToCart} handleAddItemToCart = {handleAddItemToCart} products={products}  key={element.id} element={element}/>
             </div>
         )})}
 

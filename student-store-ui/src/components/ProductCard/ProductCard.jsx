@@ -2,7 +2,7 @@ import * as React from "react";
 import "./ProductCard.css";
 import { Link } from "react-router-dom";
 
-export default function ProductCard({handleAddItemToCart, element, productId }) {
+export default function ProductCard({handleAddItemToCart,handleRemoveItemToCart, element, productId }) {
   return (
     <div>
       <Link to={"/products/" + productId}>
@@ -11,10 +11,10 @@ export default function ProductCard({handleAddItemToCart, element, productId }) 
       <p className="name"> {element.name}</p>
       <p className="price"> ${element.price}</p>
       <div class="buttons">
-        <button class="add" onClick={()=>handleAddItemToCart()}>
+        <button class="add" onClick={()=>handleAddItemToCart(productId)}>
           <i class="material-icons md32">add</i>
         </button>
-        <button class="remove">
+        <button class="remove" onClick={()=>handleRemoveItemToCart(productId)}>
           <i class="material-icons md32">remove</i>
         </button>
       </div>
