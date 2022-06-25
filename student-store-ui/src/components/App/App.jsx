@@ -73,19 +73,20 @@ console.log("shopping cart=", shoppingCart)
 }
 
 
-// function handleRemoveItemToCart(productId){
-//   if(productId){
-//     setShoppingCart(current =>  ({
-//       ...current, [itemId]:productId,[quantity]:shoppingCart[quantity] -=1
-//     }))
-//   }else{
-  
-//     }
-  
-//   if(shoppingCart.quantity==0){
-
-//   }
-// }
+function handleRemoveItemToCart(productId){
+  let itemFound = shoppingCart.find((x) => x.itemId === productId);
+  if(itemFound){
+    let copyShoppingCart = shoppingCart
+    let index = shoppingCart.findIndex(element => element.itemId == productId)
+    copyShoppingCart[index].quantity -=1 
+    if(copyShoppingCart[index].quantity<=0){ // if quantity is less than 0 remove object from arr
+      setShoppingCart(shoppingCart.filter((_, idx)=>idx !== index)) // removes the selected index from arr
+    }else{
+      setShoppingCart(copyShoppingCart)
+    }
+    }
+console.log("shopping cart=", shoppingCart)
+}
 
 
 function handleOnCheckoutFormChange(name, value){
