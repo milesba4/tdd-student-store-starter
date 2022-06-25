@@ -18,6 +18,7 @@ return(
                 <br></br>
                 <span className="cart-product-total-price">Price:  {totalPrice}</span> 
             </div>
+
         )})}
 </div> 
 )
