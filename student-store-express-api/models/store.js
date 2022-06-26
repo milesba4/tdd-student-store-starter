@@ -10,7 +10,12 @@ class Purchase{
         storage.get("purchases").push(newPurchase).write()
     return newPurchase
     }
-    static async createProducts(product)
+    
+    static async createProducts(product){
+        storage.get("products").push(product).write()
+
+    return product
+    }
     
 
     static async listPurchases(){
