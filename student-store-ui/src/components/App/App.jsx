@@ -124,7 +124,7 @@ React.useEffect(() => {
           <Navbar />
           <Sidebar error = {error} products = {products} shoppingCart={shoppingCart} isOpen={isOpen} handleOnToggle={handleOnToggle}/>
           <Routes path="*" element = {<NotFound/>}>
-          <Route path="/" element={<Home handleRemoveItemToCart={handleRemoveItemToCart}handleAddItemToCart={handleAddItemToCart} handleOnToggle={handleOnToggle} selectCategory={selectCategory} userInput={userInput} setUserInput={setUserInput} products={products} setCategories={setCategories}  />} /> 
+          <Route path="/" element={<Home shoppingCart={shoppingCart} handleRemoveItemToCart={handleRemoveItemToCart} handleAddItemToCart={handleAddItemToCart} handleOnToggle={handleOnToggle} selectCategory={selectCategory} userInput={userInput} setUserInput={setUserInput} products={products} setCategories={setCategories}  />} /> 
           <Route path="/products/:productId" element={<ProductDetail error = {error} setError = {setError} shoppingCart={shoppingCart} isFetching ={isFetching} setIsFetching={setIsFetching} handleAddItemToCart={handleAddItemToCart} handleOnToggle={handleOnToggle} />}/>
         </Routes>
         </main>
