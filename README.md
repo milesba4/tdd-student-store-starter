@@ -76,24 +76,24 @@ The following specifications were met on the Express backend and the React front
         - [x] It should decrease the quantity of the item in the `shoppingCart` by `1`, but only if it already exists.
         - [x] If it doesn't exist, the function should do nothing.
         - [ ] If the new quantity is `0`, it should remove the item from the `shoppingCart`
-      - [ ] The **`handleOnCheckoutFormChange`** function. When called...
-        - [ ] It should receive two arguments:
-          - [ ] `name` - the `name` attribute of the input being updated
-          - [ ] `value` - the new value to set for that input
-        - [ ] It should update the `checkoutForm` object with the new value from the correct input(s)
-      - [ ] The **`handleOnSubmitCheckoutForm`** function. When called...
-        - [ ] It should submit the user's order to the API
-        - [ ] To submit the user's order, it should leverage the `axios.post` method to send a `POST` request to the `/store` endpoint.
-        - [ ] The body of that `POST` request should be an object with two fields:
-          - [ ] The `user` field:
-            - [ ] Should be an object containing `name` and `email` properties
-            - [ ] Each property should be set to the correct value found in the `checkoutForm`
-          - [ ] The `shoppingCart` field:
-            - [ ] Should contain the user's order formatted as an array of objects.
-            - [ ] Each object in the array should have two fields:
-              - [ ] The `itemId` field should store the `id` of the item being purchased.
-              - [ ] The `quantity` field should store a number representing how many of that item the user is purchasing.
-            - [ ] Don't include the `total` price here, since we'll be calculating that on the backend. Remember to never trust the client!
+      - [x] The **`handleOnCheckoutFormChange`** function. When called...
+        - [x] It should receive two arguments:
+          - [x] `name` - the `name` attribute of the input being updated
+          - [x] `value` - the new value to set for that input
+        - [x] It should update the `checkoutForm` object with the new value from the correct input(s)
+      - [x] The **`handleOnSubmitCheckoutForm`** function. When called...
+        - [x] It should submit the user's order to the API
+        - [x] To submit the user's order, it should leverage the `axios.post` method to send a `POST` request to the `/store` endpoint.
+        - [x] The body of that `POST` request should be an object with two fields:
+          - [x] The `user` field:
+            - [x] Should be an object containing `name` and `email` properties
+            - [x] Each property should be set to the correct value found in the `checkoutForm`
+          - [x] The `shoppingCart` field:
+            - [x] Should contain the user's order formatted as an array of objects.
+            - [x] Each object in the array should have two fields:
+              - [x] The `itemId` field should store the `id` of the item being purchased.
+              - [x] The `quantity` field should store a number representing how many of that item the user is purchasing.
+            - [x] Don't include the `total` price here, since we'll be calculating that on the backend. Remember to never trust the client!
 
 **Navbar.jsx**
 
@@ -219,7 +219,7 @@ The following specifications were met on the Express backend and the React front
     - `handleOnCheckoutFormChange` - handler function to update the `checkoutForm`
     - `handleOnSubmitCheckoutForm` - handler function to submit the user's order to the API
   - [x] Should render two `input` elements, each with the `className` of `checkout-form-input`
-    - [ ] The `checkoutForm` prop should supply the correct props needed to create the two controlled inputs:
+    - [x] The `checkoutForm` prop should supply the correct props needed to create the two controlled inputs:
       - [x] The first input should have:
         - [x] the `type` prop set to `email`
         - [x] the `name` prop set to `email`
