@@ -3,7 +3,7 @@ import "./Home.css"
 import Hero from "../Hero/Hero"
 import ProductGrid from "../ProductGrid/ProductGrid"
 import Search from "../Search/Search"
-export default function Home({ products,handleAddItemToCart,handleRemoveItemToCart, userInput, setUserInput, setCategories, selectCategory}) {
+export default function Home({ shoppingCart, products,handleAddItemToCart,handleRemoveItemToCart, userInput, setUserInput, setCategories, selectCategory}) {
 
 
 
@@ -21,7 +21,7 @@ export default function Home({ products,handleAddItemToCart,handleRemoveItemToCa
         )
         )}
       </ul>
-      <ProductGrid handleRemoveItemToCart={handleRemoveItemToCart} handleAddItemToCart={handleAddItemToCart} userInput={userInput} selectCategory={selectCategory} products={products} /> 
+      <ProductGrid shoppingCart = {shoppingCart} handleRemoveItemToCart={handleRemoveItemToCart} handleAddItemToCart={handleAddItemToCart} userInput={userInput} selectCategory={selectCategory} products={products} /> 
      
     </div>
   )
