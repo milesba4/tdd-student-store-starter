@@ -3,7 +3,7 @@ export default function ShoppingCart({shoppingCart,products}) {
     return(
 
     <div className = "shopping-cart"> 
-    {shoppingCart.length!=0?(<getShoppingCartItems shoppingCart={shoppingCart} products={products}/>):<h1>None</h1>}
+    {shoppingCart.length!=0?(<getShoppingCartItems shoppingCart={shoppingCart} products={products}/>):<h1>No items added to cart yet. Start shopping now!</h1>}
     </div> 
     )
  }
