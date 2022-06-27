@@ -26,6 +26,7 @@ class Store{
 
 
     static async listProducts() {   // listing products
+    static async listProducts() {   // listing all products
         const products = storage.get("products")
         return products;
     }
