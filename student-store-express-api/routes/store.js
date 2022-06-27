@@ -15,11 +15,13 @@ router.post("/", async (req, res, next) => {
 })
 
 router.get("/", async (req, res, next) => {
-   try {
-
-   } catch (error) {
+   try{
+      const response = await Store.listProducts();
+      res.status(200).json({"products":response})
+   }catch(error)  {
       next(error);
-   }
+}
+  
 })
 
 
