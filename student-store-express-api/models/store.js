@@ -28,5 +28,14 @@ class Purchase{
         const products = storage.get("products")
         return products;
     }
+
+    static async getProductById(productId) {  // get specific product
+        const product = storage.get("products").find({id:Number(productId)}).value();
+        if(!productId){
+        return "no product"  // check if product doesnt exit
+        }
+        return product
+
+    }
 }
 module.exports=Purchase
