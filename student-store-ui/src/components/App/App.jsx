@@ -105,16 +105,14 @@ function handleOnSubmitCheckoutForm() {
       setShoppingCart([])
       setCheckoutForm({ email: "", name: "" })
     })
-    .catch((error) => { setError(error); console.log(error) })
-
+    .catch((error) => { setError(error); console.log(error)})
 }
 
 
 React.useEffect(() => {
   axios.get("http://localhost:3001/store")
-    .then((response) => { setProducts(response.data.products); console.log(response.data.products) })
+    .then((response) => { setProducts(response.data.products); console.log(response.data.products)})
     .catch((error) => { setError(error); console.log(error) })
-
 }, [])
 
   return (
