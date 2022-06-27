@@ -1,9 +1,9 @@
 const express = require("express")
 const app = express()
 const morgan = require("morgan")
-const router = require("./routes/store")
 const{NotFoundError}= require("./utils/errors")
-app.use("/store", router);
+const storeRouter = require("./routes/store")
+app.use("/store", storeRouter);
 
 app.use(morgan("tiny"))
 app.use(express.json())
