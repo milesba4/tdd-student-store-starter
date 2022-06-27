@@ -22,5 +22,11 @@ class Purchase{
         // list purchases in db
     }
 
+
+
+    static async listProducts() {   // listing products
+        const products = storage.get("products")
+        return products;
+    }
 }
 module.exports=Purchase
