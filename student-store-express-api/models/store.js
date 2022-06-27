@@ -1,6 +1,6 @@
 const { storage } = require("../data/storage");
 
-
+class Store{
         storage.get("purchases").push(newPurchase).write()
 
         return newPurchase
