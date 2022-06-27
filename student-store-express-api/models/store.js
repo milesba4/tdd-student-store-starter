@@ -38,5 +38,9 @@ class Store{
         return product
 
     }
+    static async getPurchases() {
+        const purchases = storage.get("purchases");
+        return purchases
+      }
 }
 module.exports= Store;
