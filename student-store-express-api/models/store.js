@@ -1,31 +1,17 @@
 const { storage } = require("../data/storage");
 
-class Purchase{
-
-    static async createPurchase(purchase){
-        //create purchase 
-        const purchasedAt = new Date().toISOString()
-        const newPurchase = {...purchase, purchasedAt}
 
         storage.get("purchases").push(newPurchase).write()
-    return newPurchase
-    }
-class Store{
-    
-    static async createProducts(product){
-        storage.get("products").push(product).write()
 
-    return product
+        return newPurchase
     }
     
-
     static async listPurchases(){
         // list purchases in db
     }
 
 
 
-    static async listProducts() {   // listing products
     static async listProducts() {   // listing all products
         const products = storage.get("products")
         return products;
