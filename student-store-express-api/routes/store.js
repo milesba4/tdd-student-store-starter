@@ -1,6 +1,6 @@
 const express = require("express");
-const Store = ("../models/store")
-const {BadRequestError, NotFoundError} = require("../utils/errors");
+const Store = require("../models/store")
+const {BadRequestError,NotFoundError} = require("../utils/errors")
 const router = express.Router();
 
 router.post("/", async (req, res, next) => {
