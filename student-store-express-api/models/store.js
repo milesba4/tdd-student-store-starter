@@ -1,6 +1,9 @@
 const { storage } = require("../data/storage");
 
 class Store{
+
+    static async createPurchase(user,shoppingCart){
+          };
         storage.get("purchases").push(newPurchase).write()
 
         return newPurchase
