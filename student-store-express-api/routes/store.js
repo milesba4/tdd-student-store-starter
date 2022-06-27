@@ -24,5 +24,15 @@ router.get("/", async (req, res, next) => {
   
 })
 
+router.get("/:productId", async (req, res, next) => {
+   try{
+      const productId = req.params.productId;
+      const response = await Store.getProductById(productId);
+      res.status(200).json({"product":response})
+   }catch(error)  {
+      next(error);
+}
+  
+})
 
 module.exports = router;
