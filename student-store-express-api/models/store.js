@@ -39,4 +39,4 @@ class Store{
 
     }
 }
-module.exports=Purchase
+module.exports= Store;
