@@ -3,8 +3,6 @@ const { BadRequestError } = require("../utils/errors");
 
 class Store{
 
-    static async createPurchase(user,shoppingCart){
-          };
     static createPurchase(user,shoppingCart){
         if(user.email == "" || shoppingCart.length==0 || user.name ==""){
         throw new BadRequestError("Missing email or user or no items in shopping cart")
