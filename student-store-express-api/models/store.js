@@ -16,6 +16,31 @@ class Store{
         }
         checkShoppingCart.push(item)
         })
+        let reciptTotal = 0
+        for (let i = 0; i < shoppingCart.length; i++) {
+            let quantity = shoppingCart[i].quantity;
+            let idItem = shoppingCart[i].itemId
+            console.log("itemid=",idItem)
+            let price = Store.getProductById(idItem).price;
+            console.log("price=",price)
+            reciptTotal = reciptTotal+(price * quantity)
+            console.log("rec=",reciptTotal)
+          }
+          console.log("check2=",reciptTotal)
+        reciptTotal = reciptTotal+(reciptTotal * .0875) 
+        console.log("check3=",reciptTotal)
+        let CreatedAt = new Date().toISOString();
+          console.log("user.name=", user.name)
+          console.log("email=", user.email)
+        let newPurchase = {
+        id:storage.get("purchases").value().length+1,
+        name:user.name,
+        email: user.email,
+        order:shoppingCart,
+        total: reciptTotal,
+        createdAt: CreatedAt
+        }
+
         storage.get("purchases").push(newPurchase).write()
 
         return newPurchase
