@@ -1,34 +1,39 @@
 const { storage } = require("../data/storage");
+const { BadRequestError } = require("../utils/errors");
 
 class Store{
 
     static async createPurchase(user,shoppingCart){
           };
+    static createPurchase(user,shoppingCart){
+        if(user.email == "" || shoppingCart.length==0 || user.name ==""){
+        throw new BadRequestError("Missing email or user or no items in shopping cart")
+        }
         storage.get("purchases").push(newPurchase).write()
 
         return newPurchase
     }
     
-    static async listPurchases(){
+    static listPurchases(){
         // list purchases in db
     }
 
 
 
-    static async listProducts() {   // listing all products
+    static listProducts() {   // listing all products
         const products = storage.get("products")
         return products;
     }
 
-    static async getProductById(productId) {  // get specific product
+    static getProductById(productId) {  // get specific product
+        console.log("prod=",productId)
+
         const product = storage.get("products").find({id:Number(productId)}).value();
-        if(!productId){
-        return "no product"  // check if product doesnt exit
-        }
+        console.log("prod=",productId)
         return product
 
     }
-    static async getPurchases() {
+    static getPurchases() {
         const purchases = storage.get("purchases");
         return purchases
       }
