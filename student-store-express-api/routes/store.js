@@ -6,10 +6,12 @@ const router = express.Router();
 router.post("/", async (req, res, next) => {
    try {
       const shoppingCart = req.body.shoppingCart;
+      console.log("sh", shoppingCart)
       const user = req.body.user;
       const newPurchase = await Store.createPurchase(user, shoppingCart);
-      res.status(201).json({post : {purchase:newPurchase}});
+      res.status(201).json({purchase:newPurchase});
    } catch (error) {
+      console.log("error in catch")
       next(error);
    }
 })
