@@ -9,6 +9,13 @@ class Store{
         if(user.email == "" || shoppingCart.length==0 || user.name ==""){
         throw new BadRequestError("Missing email or user or no items in shopping cart")
         }
+        let checkShoppingCart = []
+        shoppingCart.map((item)=>{
+        if (checkShoppingCart.includes(item)){
+                throw new BadRequestError("duplicate in shopping cart")
+        }
+        checkShoppingCart.push(item)
+        })
         storage.get("purchases").push(newPurchase).write()
 
         return newPurchase
