@@ -28,6 +28,22 @@ export default function App() {
     email: " ",
   });
 
+  React.useEffect(async () => {
+    try {
+      const response = await axios.get(
+        "https://codepath-store-api.herokuapp.com/store"
+      );
+      if (response.data.products) {
+        setProducts(response.data.products);
+      }
+      console.log("products=", products);
+    } catch (error) {
+      setError(error);
+
+      console.log("error=", error);
+    }
+  }, []);
+
     } else {
       setShoppingCart([...shoppingCart, { itemId: productId, quantity: 1 }]);
       console.log("middlesc=", shoppingCart)
