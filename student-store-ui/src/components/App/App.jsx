@@ -44,6 +44,12 @@ export default function App() {
     }
   }, []);
 
+  function handleOnToggle() {
+    setIsOpen(!isOpen);
+
+    console.log("open status1=", isOpen);
+  }
+
     } else {
       setShoppingCart([...shoppingCart, { itemId: productId, quantity: 1 }]);
       console.log("middlesc=", shoppingCart)
