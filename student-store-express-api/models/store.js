@@ -2,8 +2,8 @@ const { storage } = require("../data/storage");
 const { BadRequestError } = require("../utils/errors");
 
 class Store{
-
-    static createPurchase(user,shoppingCart){
+    static async createPurchase(user,shoppingCart){
+        console.log("sho",shoppingCart)
         if(user.email == "" || shoppingCart.length==0 || user.name ==""){
         throw new BadRequestError("Missing email or user or no items in shopping cart")
         }
@@ -19,17 +19,19 @@ class Store{
             let quantity = shoppingCart[i].quantity;
             let idItem = shoppingCart[i].itemId
             console.log("itemid=",idItem)
-            let price = Store.getProductById(idItem).price;
+            let price = storage.get("products").find({id:idItem}).value().price
             console.log("price=",price)
+
             reciptTotal = reciptTotal+(price * quantity)
             console.log("rec=",reciptTotal)
           }
-          console.log("check2=",reciptTotal)
         reciptTotal = reciptTotal+(reciptTotal * .0875) 
         console.log("check3=",reciptTotal)
+
         let CreatedAt = new Date().toISOString();
           console.log("user.name=", user.name)
           console.log("email=", user.email)
+
         let newPurchase = {
         id:storage.get("purchases").value().length+1,
         name:user.name,
@@ -50,18 +52,19 @@ class Store{
 
 
 
-    static listProducts() {   // listing all products
+    static async listProducts() {   // listing all products
         const products = storage.get("products")
         return products;
     }
 
-    static getProductById(productId) {  // get specific product
+    static async getProductById(productId) {  // get specific product
         console.log("prod=",productId)
 
         const product = storage.get("products").find({id:Number(productId)}).value();
-        console.log("prod=",productId)
+        console.log("prodId=",productId)
+        console.log("pro", product)
         return product
-
+        
     }
     static getPurchases() {
         const purchases = storage.get("purchases");

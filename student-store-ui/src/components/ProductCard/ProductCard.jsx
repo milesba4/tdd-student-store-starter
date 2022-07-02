@@ -3,8 +3,7 @@ import "./ProductCard.css";
 import { Link } from "react-router-dom";
 
 
-export default function ProductCard({shoppingCart,handleAddItemToCart,handleRemoveItemToCart, element, productId }) {
-  console.log("el=", element)
+export default function ProductCard({handleOnCheckoutFormChange,shoppingCart,handleAddItemToCart,handleRemoveItemToCart, element, productId }) {
   return (
     <div>
       <Link to={"/products/" + productId}>

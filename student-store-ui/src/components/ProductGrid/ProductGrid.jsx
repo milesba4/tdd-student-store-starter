@@ -3,10 +3,9 @@ import "./ProductGrid.css"
 import ProductCard from "../ProductCard/ProductCard"
 
 
-export default function ProductGrid({shoppingCart,products, handleRemoveItemToCart,handleAddItemToCart,selectCategory,userInput}) {
+export default function ProductGrid({handleOnCheckoutFormChange, shoppingCart,products, handleRemoveItemToCart,handleAddItemToCart,selectCategory,userInput}) {
 
     console.log("userInput=",userInput)
-    console.log("object=",products)
     function getSearchProducts(){
         if(userInput=="" && selectCategory=="All Categories"){  // if search query is nothing return all products
         return products
@@ -25,11 +24,10 @@ export default function ProductGrid({shoppingCart,products, handleRemoveItemToCa
     return (
     <div className="product-grid">
      {getSearchProducts().map((element) =>{  // iterates through every element in the returned array of getSearchProducts and renders a product card for it
-        console.log("element.id=",element.id)
         return(
             <div className="product-card">
             
-            <ProductCard shoppingCart = {shoppingCart} productId={element.id} handleRemoveItemToCart={handleRemoveItemToCart} handleAddItemToCart = {handleAddItemToCart} products={products}  key={element.id} element={element}/>
+            <ProductCard handleOnCheckoutFormChange={handleOnCheckoutFormChange} shoppingCart = {shoppingCart} productId={element.id} handleRemoveItemToCart={handleRemoveItemToCart} handleAddItemToCart = {handleAddItemToCart} products={products}  key={element.id} element={element}/>
             </div>
         )})}
 
