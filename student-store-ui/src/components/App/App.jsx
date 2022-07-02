@@ -84,29 +84,6 @@ console.log("shopping cart=", shoppingCart)
         setShoppingCart(copyShoppingCart);
       }
     }
-console.log("shopping cart=", shoppingCart)
-}
-
-
-function handleOnCheckoutFormChange(name, value){
-  setCheckoutForm({
-    ...checkoutForm,
-    [name]: value,
-  })
-
-}
-
-
-
-function handleOnSubmitCheckoutForm() {
-  axios.post("http://localhost:3001/store", { user: checkoutForm, shoppingCart: shoppingCart })
-    .then(() => {
-      setShoppingCart([])
-      setCheckoutForm({ email: "", name: "" })
-    })
-    .catch((error) => { setError(error); console.log(error) })
-
-}
 
 
 React.useEffect(() => {
