@@ -86,10 +86,6 @@ console.log("shopping cart=", shoppingCart)
     }
 
 
-React.useEffect(() => {
-  axios.get("http://localhost:3001/store")
-    .then((response) => { setProducts(response.data.products); console.log(response.data.products) })
-    .catch((error) => { setError(error); console.log(error) })
 
 }, [])
 
