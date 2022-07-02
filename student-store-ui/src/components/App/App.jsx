@@ -89,6 +89,22 @@ console.log("shopping cart=", shoppingCart)
     setCheckoutForm({ ...checkoutForm, [name]: value });
   };
 
+  const handleOnSubmitCheckoutForm = () => {
+    axios
+      .post("http://localhost:3001/store", {
+        user: checkoutForm,
+        shoppingCart: shoppingCart,
+      })
+      .then((response) => {
+        setShoppingCart([]);
+        setCheckoutForm({ name: " ", email: " "  });
+        console.log("checkoutForm=", checkoutForm)
+      })
+      .catch((error) => {
+      setError(error);
+      console.log(error);
+    });
+  }
 
 }, [])
 
