@@ -28,36 +28,6 @@ export default function App() {
     email: " ",
   });
 
-  const [products, setProducts] = React.useState([])
-  const[userInput,setUserInput]= React.useState("")
-  const[selectCategory,setCategories] =React.useState("All Categories")
-  const[isFetching,setIsFetching] = React.useState(false)
-  const[error,setError]=React.useState("")
-  const[isOpen,setIsOpen] = React.useState(true)
-  const[shoppingCart,setShoppingCart]=React.useState([])
-  const[checkoutForm,setCheckoutForm]=React.useState({name: "", email: ""})
-  
-
-React.useEffect(async() => {
-  try{
-    const response = await axios.get("https://codepath-store-api.herokuapp.com/store")
-    if(response.data.products){
-      setProducts(response.data.products)}
-      console.log("products=",products)
-  }
-  catch (error){
-    setError(error)
-    
-    console.log("error=", error)
-  }
-}, []);
-
-function handleOnToggle(){
-
-  setIsOpen(!isOpen)
-
-console.log("open status1=", isOpen)
-}
 
 
 
