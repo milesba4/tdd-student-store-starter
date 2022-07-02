@@ -145,5 +145,470 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 1,
+      "name": "Miles Baffour",
+      "email": false,
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-28T03:39:26.332Z"
+    },
+    {
+      "id": 2,
+      "name": "Miles Baffour",
+      "email": false,
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-28T03:40:30.331Z"
+    },
+    {
+      "id": 3,
+      "name": "Miles Baffour",
+      "email": false,
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-28T03:40:31.308Z"
+    },
+    {
+      "id": 4,
+      "name": "Miles Baffour",
+      "email": false,
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-28T03:41:07.761Z"
+    },
+    {
+      "id": 5,
+      "name": "Miles Baffour",
+      "email": false,
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-28T03:42:34.112Z"
+    },
+    {
+      "id": 6,
+      "name": "Miles Baffour",
+      "email": false,
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-28T03:42:59.915Z"
+    },
+    {
+      "id": 7,
+      "name": "Miles Baffour",
+      "email": false,
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-28T03:53:20.669Z"
+    },
+    {
+      "id": 8,
+      "name": "Miles Baffour",
+      "email": false,
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-28T03:54:35.355Z"
+    },
+    {
+      "id": 9,
+      "name": "Miles Baffour",
+      "email": false,
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-28T03:55:20.290Z"
+    },
+    {
+      "id": 10,
+      "name": "Miles Baffour",
+      "email": "123",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-28T03:56:13.511Z"
+    },
+    {
+      "id": 11,
+      "name": "Miles Baffour",
+      "email": "123",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-28T03:57:06.398Z"
+    },
+    {
+      "id": 12,
+      "name": "Miles Baffour",
+      "email": "123",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": 6.514125,
+      "createdAt": "2022-06-28T03:58:21.679Z"
+    },
+    {
+      "id": 13,
+      "name": " f",
+      "email": "mbaffour24@students.claremontmckenna.edu",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 4
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-30T14:27:26.006Z"
+    },
+    {
+      "id": 14,
+      "name": " f",
+      "email": "mbaffour24@students.claremontmckenna.edu",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-06-30T14:27:56.103Z"
+    },
+    {
+      "id": 15,
+      "name": " hello",
+      "email": "mbaffour24@students.claremontmckenna.edu",
+      "order": [
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-07-01T05:24:38.952Z"
+    },
+    {
+      "id": 16,
+      "name": "Miles Baffour",
+      "email": "123",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-07-01T05:35:26.825Z"
+    },
+    {
+      "id": 17,
+      "name": "Miles Baffour",
+      "email": "123",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-07-01T05:37:51.196Z"
+    },
+    {
+      "id": 18,
+      "name": "Miles Baffour",
+      "email": "123",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-07-01T05:39:09.714Z"
+    },
+    {
+      "id": 19,
+      "name": "Miles Baffour",
+      "email": "123",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-07-01T05:39:36.806Z"
+    },
+    {
+      "id": 20,
+      "name": "Miles Baffour",
+      "email": "123",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-07-01T05:40:07.768Z"
+    },
+    {
+      "id": 21,
+      "name": "Miles Baffour",
+      "email": "123",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-07-01T05:40:39.824Z"
+    },
+    {
+      "id": 22,
+      "name": "Miles Baffour",
+      "email": "123",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-07-01T05:41:09.917Z"
+    },
+    {
+      "id": 23,
+      "name": "Miles Baffour",
+      "email": "123",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-07-01T05:52:49.131Z"
+    },
+    {
+      "id": 24,
+      "name": "Miles Baffour",
+      "email": "123",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-07-01T05:53:23.956Z"
+    },
+    {
+      "id": 25,
+      "name": "Miles Baffour",
+      "email": "123",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-07-01T05:53:38.612Z"
+    },
+    {
+      "id": 26,
+      "name": "Miles Baffour",
+      "email": "123",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-07-01T05:54:50.620Z"
+    },
+    {
+      "id": 27,
+      "name": "Miles Baffour",
+      "email": "123",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": null,
+      "createdAt": "2022-07-01T05:55:13.325Z"
+    },
+    {
+      "id": 28,
+      "name": "Miles Baffour",
+      "email": "123",
+      "order": [
+        {
+          "itemId": 2,
+          "quantity": 2
+        },
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ],
+      "total": 6.514125,
+      "createdAt": "2022-07-01T06:05:18.727Z"
+    }
+  ]
 }
