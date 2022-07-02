@@ -85,6 +85,9 @@ console.log("shopping cart=", shoppingCart)
       }
     }
 
+  const handleOnCheckoutFormChange = (name, value) => {
+    setCheckoutForm({ ...checkoutForm, [name]: value });
+  };
 
 
 }, [])
