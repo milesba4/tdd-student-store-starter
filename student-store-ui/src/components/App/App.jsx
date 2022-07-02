@@ -50,6 +50,17 @@ export default function App() {
     console.log("open status1=", isOpen);
   }
 
+  function handleAddItemToCart(productId) {
+    console.log("productid=", productId);
+    let itemFound = shoppingCart.find((x) => x.itemId === productId);
+    if (itemFound) {
+      console.log("quant1=", shoppingCart.itemId);
+      let copyShoppingCart = shoppingCart;
+      let index = shoppingCart.findIndex(
+        (element) => element.itemId == productId
+      );
+      copyShoppingCart[index].quantity += 1; //add
+      setShoppingCart(copyShoppingCart);
     } else {
       setShoppingCart([...shoppingCart, { itemId: productId, quantity: 1 }]);
       console.log("middlesc=", shoppingCart)
