@@ -63,11 +63,10 @@ export default function App() {
       setShoppingCart(copyShoppingCart);
     } else {
       setShoppingCart([...shoppingCart, { itemId: productId, quantity: 1 }]);
-      console.log("middlesc=", shoppingCart)
+      console.log("middlesc=", shoppingCart);
     }
-console.log("shopping cart=", shoppingCart)
-}
-
+    console.log("shopping cart=", shoppingCart);
+  }
 
   function handleRemoveItemToCart(productId) {
     let itemFound = shoppingCart.find((x) => x.itemId === productId);
@@ -84,6 +83,9 @@ console.log("shopping cart=", shoppingCart)
         setShoppingCart(copyShoppingCart);
       }
     }
+    console.log("shopping cart=", shoppingCart);
+  }
+
 
   const handleOnCheckoutFormChange = (name, value) => {
     setCheckoutForm({ ...checkoutForm, [name]: value });
@@ -106,7 +108,6 @@ console.log("shopping cart=", shoppingCart)
     });
   }
 
-}, [])
   React.useEffect(() => {
     axios
       .get("http://localhost:3001/store")
@@ -170,10 +171,8 @@ console.log("shopping cart=", shoppingCart)
             />
           </Routes>
         </main>
-        
       </BrowserRouter>
-      
     </div>
-  )
+  );
 }
 
