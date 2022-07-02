@@ -125,11 +125,50 @@ console.log("shopping cart=", shoppingCart)
       <BrowserRouter>
         <main>
           <Navbar />
-          <Sidebar error = {error} products = {products} shoppingCart={shoppingCart} isOpen={isOpen} handleOnToggle={handleOnToggle}/>
-          <Routes path="*" element = {<NotFound/>}>
-          <Route path="/" element={<Home shoppingCart={shoppingCart} handleRemoveItemToCart={handleRemoveItemToCart} handleAddItemToCart={handleAddItemToCart} handleOnToggle={handleOnToggle} selectCategory={selectCategory} userInput={userInput} setUserInput={setUserInput} products={products} setCategories={setCategories}  />} /> 
-          <Route path="/products/:productId" element={<ProductDetail error = {error} setError = {setError} shoppingCart={shoppingCart} isFetching ={isFetching} setIsFetching={setIsFetching} handleAddItemToCart={handleAddItemToCart} handleOnToggle={handleOnToggle} />}/>
-        </Routes>
+          <Sidebar
+            error={error}
+            products={products}
+            shoppingCart={shoppingCart}
+            isOpen={isOpen}
+            handleOnToggle={handleOnToggle}
+            checkoutForm={checkoutForm}
+            handleOnCheckoutFormChange = {handleOnCheckoutFormChange}
+            handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} 
+          />
+          <Routes path="*" element={<NotFound />}>
+            <Route
+              path="/"
+              element={
+                <Home
+                  handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+                  shoppingCart={shoppingCart}
+                  handleRemoveItemToCart={handleRemoveItemToCart}
+                  handleAddItemToCart={handleAddItemToCart}
+                  handleOnToggle={handleOnToggle}
+                  selectCategory={selectCategory}
+                  userInput={userInput}
+                  setUserInput={setUserInput}
+                  products={products}
+                  setCategories={setCategories}
+                  
+                />
+              }
+            />
+            <Route
+              path="/products/:productId"
+              element={
+                <ProductDetail
+                  error={error}
+                  setError={setError}
+                  shoppingCart={shoppingCart}
+                  isFetching={isFetching}
+                  setIsFetching={setIsFetching}
+                  handleAddItemToCart={handleAddItemToCart}
+                  handleOnToggle={handleOnToggle}
+                />
+              }
+            />
+          </Routes>
         </main>
         
       </BrowserRouter>
