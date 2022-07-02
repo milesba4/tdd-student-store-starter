@@ -16,6 +16,17 @@ import Search from "../Search/Search";
 //fetching data
 
 export default function App() {
+  const [products, setProducts] = React.useState([]);
+  const [userInput, setUserInput] = React.useState("");
+  const [selectCategory, setCategories] = React.useState("All Categories");
+  const [isFetching, setIsFetching] = React.useState(false);
+  const [error, setError] = React.useState("");
+  const [isOpen, setIsOpen] = React.useState(true);
+  const [shoppingCart, setShoppingCart] = React.useState([]);
+  const [checkoutForm, setCheckoutForm] = React.useState({
+    name: " ",
+    email: " ",
+  });
 
   const [products, setProducts] = React.useState([])
   const[userInput,setUserInput]= React.useState("")
