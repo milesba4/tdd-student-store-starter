@@ -15,6 +15,8 @@ export default function ShoppingCart({ shoppingCart, products }) {
 export function GetShoppingCartItems({ shoppingCart, products }) {
   console.log("works");
   let subTotal = 0
+  let receiptPrice = 0
+  let receiptTotal = 0
   return(
      shoppingCart.map((item) => {
     // iterating through shoppingCart array and displaying the itemId of each object
@@ -24,8 +26,13 @@ export function GetShoppingCartItems({ shoppingCart, products }) {
     let quantity = item.quantity;
     console.log("q=", quantity);
     let price = itemProduct.price;
+    receiptPrice= receiptPrice+price
     let totalPrice = quantity * price;
     subTotal = subTotal + totalPrice
+    receiptTotal = (totalPrice +(receiptPrice * 0.0875)).toFixed(2)
+    console.log("t=",totalPrice)
+    console.log("rp",receiptPrice)
+      console.log("t&f=",(receiptPrice * 0.0875).toFixed(2))
     
     return (
       <div class="header">
@@ -38,32 +45,34 @@ export function GetShoppingCartItems({ shoppingCart, products }) {
           <br></br>
           <br></br>
         </div>
-        
-        <div className="receipt">
-        <h2>------------------------------</h2>
-              <h2>Receipt</h2>
-          <div className="receipt-subtotal">
-            <span className="label">Subtotal</span>
-            <span />
-            <span />
-            <span className="center subtotal">${Math.ceil(subTotal.toFixed(2))}</span>
-          </div>
-          <div className="receipt-taxes">
-            <span className="label">Taxes and Fees</span>
-            <span></span>
-            <span></span>
-            <span className="center">${(price * 0.0875).toFixed(2)}</span>
-          </div>
-          <div className="receipt-total">
-            <span className="label">Total</span>
-            <span />
-            <span />
-            <span className="center total-price">${(subTotal+(price * 0.0875)).toFixed(2)}</span>
-          </div>
-        </div>
+
       </div>
     );
-  })
+  }),
+  
+  
+  <div className="receipt">
+    <h2>------------------------------</h2>
+          <h2>Receipt</h2>
+      <div className="receipt-subtotal">
+        <span className="label">Subtotal</span>
+        <span />
+        <span />
+        <span className="center subtotal">${Math.ceil(subTotal.toFixed(2))}</span>
+      </div>
+      <div className="receipt-taxes">
+        <span className="label">Taxes and Fees</span>
+        <span></span>
+        <span></span>
+        <span className="center">${(receiptPrice * 0.0875).toFixed(2)}</span>
+      </div>
+      <div className="receipt-total">
+        <span className="label">Total</span>
+        <span />
+        <span />
+        <span className="center total-price">${receiptTotal}</span>
+      </div>
+    </div>
     );
 }
 // {
