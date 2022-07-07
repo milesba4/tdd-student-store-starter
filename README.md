@@ -6,6 +6,8 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
 ![ GIF](http://g.recordit.co/haXyvZxXRI.gif)
 
+![ GIF](http://g.recordit.co/X3aIzIBSZv.gif)
+
 ### Application Features
 
 #### Core Features
