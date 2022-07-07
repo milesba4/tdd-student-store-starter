@@ -1,5 +1,6 @@
 import * as React from "react";
 import "./ShoppingCart.css";
+import Receipt from "../Receipt/Receipt";
 export default function ShoppingCart({ shoppingCart, products }) {
   return (
     <div className="shopping-cart">
@@ -13,7 +14,7 @@ export default function ShoppingCart({ shoppingCart, products }) {
 }
 
 export function GetShoppingCartItems({ shoppingCart, products }) {
-  console.log("works");
+  console.log("works")
   let subTotal = 0
   let receiptPrice = 0
   let receiptTotal = 0
@@ -32,8 +33,8 @@ export function GetShoppingCartItems({ shoppingCart, products }) {
     receiptTotal = (totalPrice +(receiptPrice * 0.0875)).toFixed(2)
     console.log("t=",totalPrice)
     console.log("rp",receiptPrice)
-      console.log("t&f=",(receiptPrice * 0.0875).toFixed(2))
-    
+    console.log("t&f=",(receiptPrice * 0.0875).toFixed(2))
+ 
     return (
       <div class="header">
         <div class="product-row">
@@ -45,35 +46,13 @@ export function GetShoppingCartItems({ shoppingCart, products }) {
           <br></br>
           <br></br>
         </div>
+        <Receipt receiptTotal= {receiptTotal} receiptPrice={receiptPrice} subTotal={subTotal}/>
+      </div>
+    );
+  })
+  
+    );
 
-      </div>
-    );
-  }),
-  
-  
-  <div className="receipt">
-    <h2>------------------------------</h2>
-          <h2>Receipt</h2>
-      <div className="receipt-subtotal">
-        <span className="label">Subtotal</span>
-        <span />
-        <span />
-        <span className="center subtotal">${Math.ceil(subTotal.toFixed(2))}</span>
-      </div>
-      <div className="receipt-taxes">
-        <span className="label">Taxes and Fees</span>
-        <span></span>
-        <span></span>
-        <span className="center">${(receiptPrice * 0.0875).toFixed(2)}</span>
-      </div>
-      <div className="receipt-total">
-        <span className="label">Total</span>
-        <span />
-        <span />
-        <span className="center total-price">${receiptTotal}</span>
-      </div>
-    </div>
-    );
 }
 // {
 
